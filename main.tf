@@ -39,21 +39,21 @@ resource "aws_security_group" "hashicat" {
     from_port   = 22
     to_port     = 22
     protocol    = "tcp"
-    source_security_group_id = aws_security_group.hashicat.id
+    cidr_blocks = ["128.0.0.0/1"]
   }
 
   ingress {
     from_port   = 80
     to_port     = 80
     protocol    = "tcp"
-    source_security_group_id = aws_security_group.hashicat.id
+    cidr_blocks = ["128.0.0.0/1"]
   }
 
   ingress {
     from_port   = 443
     to_port     = 443
     protocol    = "tcp"
-    source_security_group_id = aws_security_group.hashicat.id
+    cidr_blocks = ["128.0.0.0/1"]
   }
 
   egress {
